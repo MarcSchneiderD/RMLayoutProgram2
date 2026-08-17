@@ -28,6 +28,18 @@ some awkward constructions) and depends heavily on the gdsfactory library
 (https://github.com/gdsfactory/gdsfactory).
 
 
+The project is published under the MIT license (see LICENSE), with the
+following exceptions:
+
+- The included logo pictures are not covered by the MIT license.
+
+This software was developed at the Karlsruhe Institute of Technology (KIT),
+Germany. This software is an experimental system. KIT or the author assume no
+responsibility whatsoever for its use by other parties, and makes no
+guarantees, expressed or implied, about its quality, reliability, or any
+other characteristics.
+
+
 
 
 Help
