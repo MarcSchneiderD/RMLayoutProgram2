@@ -27,6 +27,15 @@ The program is written in Python (my first Python program, so you might notice
 some awkward constructions) and depends heavily on the gdsfactory library
 (https://github.com/gdsfactory/gdsfactory).
 
+Requirements
+------------
+- ttkbootstrap   `pip install ttkbootstrap`
+- gdsfactory     `pip install gdsfactory` 
+
+I used ttkbootstrap in version 1.19.2 and gdsfactory in version 9.34.1.
+Other versions might work, but you'll have to try it out by your own.
+
+
 
 The project is published under the MIT license (see LICENSE), with the
 following exceptions:
@@ -45,4 +54,4 @@ other characteristics.
 Help
 ----
 If you find a bug in the software or need assistance, please send a message to 
-marc.schneider@kit.edu.
+marc.schneider(ät)kit.edu.

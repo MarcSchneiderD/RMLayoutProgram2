@@ -2,7 +2,13 @@ import tkinter as tk
 import tkinter.filedialog as tkf
 #from tkinter import ttk
 import ttkbootstrap as ttk         # shell: pip install ttkbootstrap
-from ctypes import windll
+
+try:
+    from ctypes import windll
+    HAS_WINDLL = True
+except ImportError:
+    HAS_WINDLL = False
+
 import math
 
 import matplotlib.pyplot as plt
@@ -20,7 +26,8 @@ import os
 import pathlib
 
 
-windll.shcore.SetProcessDpiAwareness(2)
+if HAS_WINDLL:
+    windll.shcore.SetProcessDpiAwareness(2)
 
 
 ProgramVersionString = "v0.2"
@@ -28,7 +35,7 @@ ProgramVersionString = "v0.2"
 #ProgramVersionDateString = "2026-02-18"    # First full geometry version
 #ProgramVersionDateString = "2026-02-20"     # First version saving full GDS file
 #ProgramVersionDateString = "2026-03-13"     # Demo loader program added, fixes
-ProgramVersionDateString = "2026-08-17"     # GIT version
+ProgramVersionDateString = "2026-08-18"     # Minor fixes: DPI awareness only for Windows
 
 GDS_DBU_ini = 1e-09   # GDS database units (1nm)
 GDS_UU_ini = 1e-06    # GDS user units (1µm)
@@ -1477,7 +1484,7 @@ def WriteGDS2ButtonPushed():
         fullscriptnameandpath = os.path.abspath(__file__)
         fullscriptpath = os.path.dirname(fullscriptnameandpath) 
         savepath=fullscriptpath
-    savefilename=tkf.asksaveasfilename(parent=root, initialdir=savepath, defaultextension="gds")
+    savefilename=tkf.asksaveasfilename(parent=root, initialdir=savepath, defaultextension=".gds", filetypes=[("GDS files", "*.gds"), ("All files", "*.*") ])
     if savefilename!="":
         print(savefilename)
         file=pathlib.Path(savefilename)
