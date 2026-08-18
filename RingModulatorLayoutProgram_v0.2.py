@@ -35,7 +35,7 @@ ProgramVersionString = "v0.2"
 #ProgramVersionDateString = "2026-02-18"    # First full geometry version
 #ProgramVersionDateString = "2026-02-20"     # First version saving full GDS file
 #ProgramVersionDateString = "2026-03-13"     # Demo loader program added, fixes
-ProgramVersionDateString = "2026-08-18"     # Minor fixes: DPI awareness only for Windows
+ProgramVersionDateString = "2026-08-18"     # Minor fixes: DPI awareness only for Windows, improved save dialog, improved toggle switches?
 
 GDS_DBU_ini = 1e-09   # GDS database units (1nm)
 GDS_UU_ini = 1e-06    # GDS user units (1µm)
@@ -129,7 +129,6 @@ layer_Heater_ini = (16,0)
 layer_HeaterContact_ini = (17,0)
 layer_Vias_ini = (18,0)
 layer_ContactPlugs_ini = (19,0)
-
 
 InnerElectricalMetal2RingMinimumGap=0.900     # minimum gap in µm in inner top metal ring for easier programming
 #SlabBorderExtensionOnTapers=0.0             # taperes optical slabs get a border of this size
@@ -1690,7 +1689,8 @@ class MainWindow:
             global_vars[var_name] = ttk.IntVar(value=initial_value)
             
             # Create checkbutton
-            check = ttk.Checkbutton(tab,variable=global_vars[var_name],style='Roundtoggle.Toolbutton', command=command)
+            #check = ttk.Checkbutton(tab,variable=global_vars[var_name],style='Roundtoggle.Toolbutton', command=command)
+            check = ttk.Checkbutton(tab,variable=global_vars[var_name],bootstyle="round toggle", command=command)
             check.grid(column=column+1, row=row, padx=5, pady=10, sticky='w')
 
             return label, check  # optional: return widgets if you need to reference them later
