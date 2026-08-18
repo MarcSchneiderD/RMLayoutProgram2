@@ -4,7 +4,6 @@ Ring Modulator Layout Program 2
 
 Marc Schneider, 2026
 
-marc.schneider@kit.edu
 
 This program is for designing silicon photonic ring modulators (RM) with a
 pn-junction along the circular ring to modulate light traversing through a
